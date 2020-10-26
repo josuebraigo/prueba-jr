@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use App\Http\Requests\StoreForm;
 use Illuminate\Http\Request;
 use App\Models\Form;
 
@@ -10,10 +10,10 @@ class FormController extends Controller
     //
 
     public function create() {
-        return view();
+        return view('index');
     }
 
-    public function store(StoreForm $request) {
+    public function store(Request $request) {
         $form = new Form;
 
         $form->name = $request->input('name');
@@ -22,6 +22,8 @@ class FormController extends Controller
         $form->subject = $request->input('subject');
 
         $form->save();
+
+        return $form;
     }
 
     public function edit($id) {

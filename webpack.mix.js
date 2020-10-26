@@ -11,7 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.browserSync('prueba-jr.test');
+
+
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+    .sass('resources/scss/app.scss', 'public/css');
